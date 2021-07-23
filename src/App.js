@@ -16,8 +16,8 @@ const App = () => {
       <h1>React Animations</h1>
       <button className="Button" onClick={showModal}>Open Modal</button>
       <h3>Animating Lists</h3>
-      <Modal closed={closeModal} show={modalIsOpen} />
-      <Backdrop show={modalIsOpen} />
+      {modalIsOpen && <Modal closed={closeModal} show={modalIsOpen} />}
+      {modalIsOpen && <Backdrop show={modalIsOpen} />}
       <List />
     </div>
   );
