@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import './App.css';
 import Modal from './components/Modal/Modal';
@@ -34,11 +34,22 @@ const App = () => {
           }} />}
         </Transition>
 
-        <br />
         <button className="Button" onClick={showModal}>Open Modal</button>
+        <Transition
+          in={modalIsOpen}
+          timeout={300}
+          mountOnEnter
+          unmountOnExit
+        >
+          {(state) => (
+            <Fragment>
+              <Modal closed={closeModal} show={state} />
+              <Backdrop show={state} />
+            </Fragment>
+          )}
+        </Transition>
+
         <h3>Animating Lists</h3>
-        {modalIsOpen && <Modal closed={closeModal} show={modalIsOpen} />}
-        {modalIsOpen && <Backdrop show={modalIsOpen} />}
         <List />
       </div>
     );
