@@ -14,10 +14,10 @@ const App = () => {
   return (
     <div className="App">
       <h1>React Animations</h1>
-      <Modal closed={closeModal} show={modalIsOpen} />
-      <Backdrop show={modalIsOpen} />
       <button className="Button" onClick={showModal}>Open Modal</button>
       <h3>Animating Lists</h3>
+      <Modal closed={closeModal} show={modalIsOpen} />
+      <Backdrop show={modalIsOpen} />
       <List />
     </div>
   );
