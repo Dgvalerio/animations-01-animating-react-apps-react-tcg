@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Transition } from 'react-transition-group';
+// Alternatives to React-Transition-Group
+// -> React-Motion
+// -> React-Move
+// -> React-Router-Transition
 
 import Backdrop from './components/Backdrop/Backdrop';
 import List from './components/List/List';
